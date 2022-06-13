@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
-        let userAnswer = sender.currentTitle! // True or False e
+        let userAnswer = sender.currentTitle! // True or False 
        // let actualAnswer = quiz[questionNumber].answer
         quizBrain.checkAnswer(userAnswer)
         
