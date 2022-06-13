@@ -47,11 +47,10 @@ class ViewController: UIViewController {
         
         let userAnswer = sender.currentTitle! // True or False 
        // let actualAnswer = quiz[questionNumber].answer
-        quizBrain.checkAnswer(userAnswer)
+        let userGotItRight = quizBrain.checkAnswer(userAnswer)
         
-        if userAnswer == actualAnswer {
+        if userGotItRight{
             sender.backgroundColor = UIColor.green
-
         } else {
             sender.backgroundColor = UIColor.red
             
@@ -68,7 +67,9 @@ class ViewController: UIViewController {
     }
     
     @objc func updateUI() {
-        questionLabel.text = quiz[questionNumber].text
+        questionLabel.text = quizBrain.getQuestionText()
+        
+//        questionLabel.text = quiz[questionNumber].text
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
        // progressBar.backgroundColor = UIColor.clear
